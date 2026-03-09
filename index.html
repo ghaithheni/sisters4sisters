@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sisters4Sisters – Connecting & Celebrating for Change</title>
+  <meta name="description" content="Sisters4Sisters Inc. is a 501(c)3 Non-Profit Organization empowering women through sisterhood, community programs, and advocacy for change."/>
+  <meta name="keywords" content="Sisters4Sisters, nonprofit, women empowerment, sisterhood, community, Greenbelt Maryland"/>
+  <meta property="og:title" content="Sisters4Sisters – Connecting & Celebrating for Change"/>
+  <meta property="og:description" content="Sisters4Sisters Inc. is a 501(c)3 Non-Profit Organization empowering women through sisterhood, community programs, and advocacy."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://sisters4sisters.org"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://sisters4sisters.org"/>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            purple: { deep:'#4a0072', mid:'#7b1fa2', light:'#ce93d8', pale:'#f3e5f5' },
+            gold: { DEFAULT:'#c9a84c', light:'#f5d78e' },
+            pink: { DEFAULT:'#e91e8c', dark:'#b5007a' },
+            ink: { DEFAULT:'#1a0a2e', 2:'#4a3060', muted:'#7c6590' }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"','Georgia','serif'],
+            sans: ['"DM Sans"','sans-serif'],
+            italic: ['"Cormorant Garamond"','serif'],
+          },
+          fontSize: {
+            '2xs': '0.65rem',
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=DM+Sans:wght@400;500;600&family=Cormorant+Garamond:ital,wght@1,400;1,600&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --pd:#4a0072; --pk:#e91e8c; --gl:#f5d78e;
+      --sh: 0 4px 32px rgba(74,0,114,.10);
+      --shl:0 12px 56px rgba(74,0,114,.16);
+    }
+    html { scroll-behavior: smooth }
+    body { font-family:'DM Sans',sans-serif; overflow-x:hidden }
+    h1,h2,h3,h4 { font-family:'Playfair Display',serif }
+#btt {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#btt.on {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+    .grad-text {
+      background: linear-gradient(90deg,#e91e8c,#ce93d8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .grad-gold {
+      background: linear-gradient(135deg,#c9a84c,#a07030);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .bg-purple-grad { background: linear-gradient(135deg,#2a0048,#4a0072,#1a0a2e) }
+    .bg-pink-grad { background: linear-gradient(135deg,#e91e8c,#b5007a) }
+    .bg-purple-mid-grad { background: linear-gradient(135deg,#4a0072,#e91e8c) }
+    .bg-pill-grad { background: linear-gradient(135deg,#4a0072,#7b1fa2) }
+    .bg-gold-grad { background: linear-gradient(135deg,#c9a84c,#a07030) }
+    .bg-section { background:#faf5ff }
+
+    .divider { width:52px;height:3px;background:linear-gradient(90deg,var(--pd),var(--pk));border-radius:2px }
+    .divider.c { margin-left:auto;margin-right:auto }
+
+    .lbl { font-size:.68rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#c9a84c }
+
+    .shadow-brand { box-shadow: var(--sh) }
+    .shadow-brand-lg { box-shadow: var(--shl) }
+    .shadow-pink { box-shadow: 0 8px 28px rgba(233,30,140,.35) }
+    .shadow-pink-lg{ box-shadow: 0 12px 40px rgba(233,30,140,.5) }
+    .shadow-purple { box-shadow: 0 8px 28px rgba(74,0,114,.3) }
+
+    .border-brand { border-color: rgba(74,0,114,.12) }
+
+    .fi { opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease }
+    .fi.v { opacity:1;transform:none }
+    .d1 { transition-delay:.1s } .d2 { transition-delay:.2s }
+    .d3 { transition-delay:.3s } .d4 { transition-delay:.4s }
+
+    #hero {
+      min-height:100vh;
+      background: linear-gradient(rgba(74,0,114,0.68), rgba(26,10,46,0.78)),
+                  url('https://images.unsplash.com/photo-1559246156-13c67234bc12?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat fixed;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 0 1.5rem;
+    }
+    .hero-content { max-width: 900px; z-index: 2; padding: 2rem 1rem; }
+
+    .donate-icon { height: 48px; width: auto; margin-bottom: 1rem; }
+    .sponsor-logo { height: 64px; width: auto; object-fit: contain; filter: grayscale(30%) brightness(105%); transition: filter 0.3s; }
+    .sponsor-logo:hover { filter: grayscale(0%) brightness(100%); }
+
+    #mailing input:focus {
+      border-color: #f5d78e;
+      box-shadow: 0 0 0 3px rgba(245,215,142,0.2);
+    }
+    #mailing button:hover {
+      background: linear-gradient(135deg,#e91e8c,#ce93d8) !important;
+    }
+
+    .card-hover { transition:transform .25s,box-shadow .25s }
+    .card-hover:hover { transform:translateY(-4px);box-shadow:var(--shl) }
+
+    .inp { width:100%;background:#faf5ff;border:1.5px solid rgba(74,0,114,.12);border-radius:10px;padding:.7rem 1rem;font-size:.9rem;font-family:'DM Sans',sans-serif;color:#1a0a2e;outline:none;transition:border-color .2s }
+    .inp:focus { border-color:#7b1fa2 }
+    textarea.inp { resize:vertical;min-height:108px }
+
+    .nav-donate { background:linear-gradient(135deg,#4a0072,#e91e8c);color:#fff!important;padding:.45rem 1.1rem!important;border-radius:50px!important;font-weight:600!important }
+    .nav-donate:hover { opacity:.9 }
+
+    .hb span { display:block;width:24px;height:2px;background:#1a0a2e;border-radius:2px;transition:transform .3s,opacity .3s }
+    .hb.op span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .hb.op span:nth-child(2){opacity:0}
+    .hb.op span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+    .prog-stripe::before { content:'';display:block;width:40px;height:3px;background:linear-gradient(90deg,var(--pd),var(--pk));border-radius:2px;margin-bottom:1rem }
+  </style>
+</head>
+<body class="bg-white text-ink font-sans leading-relaxed">
+
+<header id="nav" class="fixed top-0 inset-x-0 z-50 border-b border-brand shadow-brand transition-shadow duration-300" style="background:rgba(255,255,255,.93);backdrop-filter:blur(16px)">
+  <div class="max-w-6xl mx-auto px-6">
+    <nav class="flex items-center justify-between h-[72px] gap-4" aria-label="Main navigation">
+      <a href="#hero" class="flex items-center gap-3" aria-label="Sisters4Sisters home">
+        <div class="w-10 h-10 rounded-full bg-purple-mid-grad flex items-center justify-center text-white flex-shrink-0">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg>
+        </div>
+        <div>
+          <div class="font-serif font-bold text-[1.08rem] text-purple-deep leading-tight">Sisters4Sisters</div>
+          <div class="text-[.56rem] font-medium tracking-widest uppercase text-ink-muted">Connecting · Celebrating · Changing</div>
+        </div>
+      </a>
+      <ul class="hidden md:flex list-none gap-0.5 items-center" role="list">
+        <li><a href="#about" class="text-[.82rem] font-medium text-ink-2 px-3 py-2 rounded-md hover:text-purple-mid hover:bg-purple-pale transition-colors">About</a></li>
+        <li><a href="#programs" class="text-[.82rem] font-medium text-ink-2 px-3 py-2 rounded-md hover:text-purple-mid hover:bg-purple-pale transition-colors">Programs</a></li>
+        <li><a href="#events" class="text-[.82rem] font-medium text-ink-2 px-3 py-2 rounded-md hover:text-purple-mid hover:bg-purple-pale transition-colors">Events</a></li>
+        <li><a href="#hope" class="text-[.82rem] font-medium text-ink-2 px-3 py-2 rounded-md hover:text-purple-mid hover:bg-purple-pale transition-colors">Hope</a></li>
+        <li><a href="#join" class="text-[.82rem] font-medium text-ink-2 px-3 py-2 rounded-md hover:text-purple-mid hover:bg-purple-pale transition-colors">Join</a></li>
+        <li><a href="#contact" class="text-[.82rem] font-medium text-ink-2 px-3 py-2 rounded-md hover:text-purple-mid hover:bg-purple-pale transition-colors">Contact</a></li>
+        <li><a href="#donate" class="nav-donate text-[.82rem] px-4 py-2">Donate</a></li>
+      </ul>
+      <button class="hb md:hidden flex flex-col gap-[5px] p-1 bg-transparent border-none cursor-pointer" id="hbtn" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+  <nav id="mmenu" class="hidden flex-col bg-white/95 border-t border-brand px-6 pb-5 pt-3 gap-1" aria-label="Mobile navigation">
+    <a href="#about" class="text-[.9rem] font-medium text-ink-2 px-3 py-2.5 rounded-lg hover:bg-purple-pale hover:text-purple-mid transition-colors">About</a>
+    <a href="#programs" class="text-[.9rem] font-medium text-ink-2 px-3 py-2.5 rounded-lg hover:bg-purple-pale hover:text-purple-mid transition-colors">Programs</a>
+    <a href="#events" class="text-[.9rem] font-medium text-ink-2 px-3 py-2.5 rounded-lg hover:bg-purple-pale hover:text-purple-mid transition-colors">Events</a>
+    <a href="#hope" class="text-[.9rem] font-medium text-ink-2 px-3 py-2.5 rounded-lg hover:bg-purple-pale hover:text-purple-mid transition-colors">Hope</a>
+    <a href="#join" class="text-[.9rem] font-medium text-ink-2 px-3 py-2.5 rounded-lg hover:bg-purple-pale hover:text-purple-mid transition-colors">Join</a>
+    <a href="#donate" class="text-[.9rem] font-medium text-ink-2 px-3 py-2.5 rounded-lg hover:bg-purple-pale hover:text-purple-mid transition-colors">Donate</a>
+    <a href="#contact" class="text-[.9rem] font-medium text-ink-2 px-3 py-2.5 rounded-lg hover:bg-purple-pale hover:text-purple-mid transition-colors">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+<section id="hero" aria-label="Hero">
+  <div class="hero-content relative z-10">
+    <div class="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full text-[.67rem] font-semibold tracking-[.18em] uppercase" style="background:rgba(201,168,76,.14);border:1px solid rgba(201,168,76,.38);color:#f5d78e">
+      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      501(c)3 Nonprofit Organization
+    </div>
+    <h1 class="font-serif font-black leading-[1.05] mb-5" style="font-size:clamp(2.8rem,6vw,5.5rem)">
+      <em class="not-italic" style="color:#f5d78e">Sisterhood</em><br>
+      <span class="grad-text">Matters</span>
+    </h1>
+    <p class="text-white/90 mb-8 leading-relaxed max-w-2xl mx-auto" style="font-size:clamp(1rem,2vw,1.15rem)">
+      Sisters4Sisters Inc. empowers women through community connection, advocacy, and celebration. It's our time — and it's our turn to create meaningful change together.
+    </p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="#join" class="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold text-white bg-pink-grad shadow-pink hover:-translate-y-1 hover:shadow-pink-lg transition-all duration-200">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg>
+        Join the Sisterhood
+      </a>
+      <a href="#programs" class="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-medium text-white border-2 border-white/40 hover:bg-white/10 transition-all duration-200">
+        Our Programs
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+<div class="flex flex-wrap justify-center items-center gap-6 sm:gap-10 mt-12 pt-8 border-t border-white/20 text-center">
+  <div class="flex items-center gap-6 sm:gap-10">
+    <div>
+      <div class="font-serif font-black text-[1.6rem] sm:text-[1.75rem] leading-none" style="color:#f5d78e">501c3</div>
+      <div class="text-[0.65rem] sm:text-[0.68rem] uppercase tracking-wider mt-1 text-white/45">REGISTERED NONPROFIT</div>
+    </div>
+
+    <div class="hidden sm:block h-10 w-px bg-white/25" aria-hidden="true"></div>
+
+    <div>
+      <div class="font-serif font-black text-[1.6rem] sm:text-[1.75rem] leading-none" style="color:#f5d78e">CFC</div>
+      <div class="text-[0.65rem] sm:text-[0.68rem] uppercase tracking-wider mt-1 text-white/45">CHARITY #54161</div>
+    </div>
+
+    <div class="hidden sm:block h-10 w-px bg-white/25" aria-hidden="true"></div>
+
+    <div>
+      <div class="font-serif font-black text-[1.6rem] sm:text-[1.75rem] leading-none" style="color:#f5d78e">MD</div>
+      <div class="text-[0.65rem] sm:text-[0.68rem] uppercase tracking-wider mt-1 text-white/45">GREENBELT, MARYLAND</div>
+    </div>
+  </div>
+</div>  </div>
+</section>
+
+<section id="about" class="py-24 bg-white" aria-labelledby="ah">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+      <div class="relative fi">
+        <div class="absolute -top-4 -left-4 z-10 bg-gold-grad text-white rounded-2xl px-4 py-3 text-center shadow-brand-lg" style="font-family:'Playfair Display',serif">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="mx-auto mb-1"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg>
+          <div class="text-[.78rem] font-bold leading-tight">Sisters</div>
+        </div>
+        <div class="rounded-3xl overflow-hidden aspect-[4/5] shadow-brand-lg">
+          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&auto=format&fit=crop&q=75" alt="Women supporting each other in community" loading="lazy" class="w-full h-full object-cover"/>
+        </div>
+        <div class="absolute -bottom-5 -right-5 bg-white rounded-2xl p-5 shadow-brand-lg max-w-[220px] border border-brand z-10">
+          <p class="text-ink leading-snug" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem">"Connecting and celebrating for change — it's our time."</p>
+          <div class="mt-2 text-[.68rem] font-semibold tracking-widest uppercase text-purple-mid">Sisters4Sisters</div>
+        </div>
+      </div>
+      <div>
+        <div class="lbl fi">Who We Are</div>
+        <h2 id="ah" class="font-serif font-black text-ink leading-tight mb-4 fi d1" style="font-size:clamp(1.9rem,3.5vw,2.8rem)">Empowering Women.<br>Building Community.</h2>
+        <div class="divider fi d1 mb-7"></div>
+        <p class="text-ink-2 mb-4 fi d2">Sisters4Sisters Inc. is a 501(c)3 Non-Profit Organization recognized by the Internal Revenue Service, dedicated to connecting and celebrating women while driving meaningful change in our communities.</p>
+        <p class="text-ink-2 mb-0 fi d2">Through sisterhood, advocacy, and a deep commitment to service, we support women across all walks of life — lifting each other up through programs, events, and mutual support.</p>
+        <div class="grid grid-cols-2 gap-3 mt-7 fi d3">
+          <div class="flex items-start gap-3 bg-section rounded-xl p-3.5 border border-brand hover:border-purple-light hover:-translate-y-0.5 transition-all duration-200">
+            <div class="w-9 h-9 rounded-lg bg-purple-mid-grad flex items-center justify-center text-white flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div><strong class="block text-[.8rem] font-semibold text-ink">Community</strong><span class="text-[.73rem] text-ink-muted">Building bonds that last</span></div>
+          </div>
+          <div class="flex items-start gap-3 bg-section rounded-xl p-3.5 border border-brand hover:border-purple-light hover:-translate-y-0.5 transition-all duration-200">
+            <div class="w-9 h-9 rounded-lg bg-purple-mid-grad flex items-center justify-center text-white flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <div><strong class="block text-[.8rem] font-semibold text-ink">Empowerment</strong><span class="text-[.73rem] text-ink-muted">Uplifting every sister</span></div>
+          </div>
+          <div class="flex items-start gap-3 bg-section rounded-xl p-3.5 border border-brand hover:border-purple-light hover:-translate-y-0.5 transition-all duration-200">
+            <div class="w-9 h-9 rounded-lg bg-purple-mid-grad flex items-center justify-center text-white flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <div><strong class="block text-[.8rem] font-semibold text-ink">Advocacy</strong><span class="text-[.73rem] text-ink-muted">Speaking up for change</span></div>
+          </div>
+          <div class="flex items-start gap-3 bg-section rounded-xl p-3.5 border border-brand hover:border-purple-light hover:-translate-y-0.5 transition-all duration-200">
+            <div class="w-9 h-9 rounded-lg bg-purple-mid-grad flex items-center justify-center text-white flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+            </div>
+            <div><strong class="block text-[.8rem] font-semibold text-ink">Faith & Prayer</strong><span class="text-[.73rem] text-ink-muted">Prayer is the answer</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="programs" class="py-24 bg-section" aria-labelledby="prh">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center max-w-xl mx-auto mb-14">
+      <div class="lbl fi">What We Do</div>
+      <h2 id="prh" class="font-serif font-black text-ink leading-tight mt-1 fi d1" style="font-size:clamp(1.8rem,3vw,2.6rem)">Our Programs & Initiatives</h2>
+      <div class="divider c mt-4 mb-5 fi d1"></div>
+      <p class="text-ink-2 text-[.95rem] fi d2">We run year-round programs that make a real difference in women's lives and our broader community.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <article class="bg-white rounded-2xl overflow-hidden border border-brand card-hover fi flex flex-col">
+        <div class="h-44 overflow-hidden"><img src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=600&auto=format&fit=crop&q=70" alt="HIV AIDS awareness" loading="lazy" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"/></div>
+        <div class="p-6 flex flex-col flex-1 prog-stripe">
+          <div class="w-11 h-11 rounded-xl bg-purple-pale flex items-center justify-center text-purple-deep mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h3 class="font-serif font-bold text-ink text-[1.05rem] mb-2">National Black HIV/AIDS Awareness</h3>
+          <p class="text-ink-2 text-[.85rem] leading-relaxed flex-1">Raising awareness, reducing stigma, and providing resources around HIV/AIDS in the Black community. Education and advocacy that saves lives.</p>
+          <span class="mt-4 self-start text-[.67rem] font-semibold uppercase tracking-wider bg-purple-pale text-purple-mid px-3 py-1 rounded-full">Health Advocacy</span>
+        </div>
+      </article>
+      <article class="bg-white rounded-2xl overflow-hidden border border-brand card-hover fi d1 flex flex-col">
+        <div class="h-44 overflow-hidden"><img src="https://images.unsplash.com/photo-1585776245991-cf89dd7fc73a?w=600&auto=format&fit=crop&q=70" alt="Women praying together" loading="lazy" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"/></div>
+        <div class="p-6 flex flex-col flex-1 prog-stripe">
+          <div class="w-11 h-11 rounded-xl bg-purple-pale flex items-center justify-center text-purple-deep mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <h3 class="font-serif font-bold text-ink text-[1.05rem] mb-2">The Prayer Room</h3>
+          <p class="text-ink-2 text-[.85rem] leading-relaxed flex-1">"Prayer is the Answer." We create sacred spaces for spiritual reflection, healing, and collective prayer as a foundation for wellness.</p>
+          <span class="mt-4 self-start text-[.67rem] font-semibold uppercase tracking-wider bg-purple-pale text-purple-mid px-3 py-1 rounded-full">Spiritual Wellness</span>
+        </div>
+      </article>
+      <article class="bg-white rounded-2xl overflow-hidden border border-brand card-hover fi d2 flex flex-col">
+        <div class="h-44 overflow-hidden"><img src="https://images.unsplash.com/photo-1607453998774-d533f65dac99?w=600&auto=format&fit=crop&q=70" alt="Holiday gifts for children" loading="lazy" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"/></div>
+        <div class="p-6 flex flex-col flex-1 prog-stripe">
+          <div class="w-11 h-11 rounded-xl bg-purple-pale flex items-center justify-center text-purple-deep mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+          </div>
+          <h3 class="font-serif font-bold text-ink text-[1.05rem] mb-2">Adopt a Child – 'Tis the Season</h3>
+          <p class="text-ink-2 text-[.85rem] leading-relaxed flex-1">Our holiday initiative ensures no child is left behind. Gift drives and adoption programs bringing joy to families in need each holiday season.</p>
+          <span class="mt-4 self-start text-[.67rem] font-semibold uppercase tracking-wider bg-purple-pale text-purple-mid px-3 py-1 rounded-full">Community Giving</span>
+        </div>
+      </article>
+      <article class="bg-white rounded-2xl overflow-hidden border border-brand card-hover fi flex flex-col">
+        <div class="h-44 overflow-hidden"><img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&auto=format&fit=crop&q=70" alt="Women celebrating together" loading="lazy" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"/></div>
+        <div class="p-6 flex flex-col flex-1 prog-stripe">
+          <div class="w-11 h-11 rounded-xl bg-purple-pale flex items-center justify-center text-purple-deep mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+          </div>
+          <h3 class="font-serif font-bold text-ink text-[1.05rem] mb-2">Sisters' Favorite Things</h3>
+          <p class="text-ink-2 text-[.85rem] leading-relaxed flex-1">A celebratory program recognizing and sharing what brings joy to our sisterhood. Community sharing, recommendations, and celebrations of life's good gifts.</p>
+          <span class="mt-4 self-start text-[.67rem] font-semibold uppercase tracking-wider bg-purple-pale text-purple-mid px-3 py-1 rounded-full">Celebration</span>
+        </div>
+      </article>
+      <article class="bg-white rounded-2xl overflow-hidden border border-brand card-hover fi d1 flex flex-col">
+        <div class="h-44 overflow-hidden"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&auto=format&fit=crop&q=70" alt="Women in wellness program" loading="lazy" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"/></div>
+        <div class="p-6 flex flex-col flex-1 prog-stripe">
+          <div class="w-11 h-11 rounded-xl bg-purple-pale flex items-center justify-center text-purple-deep mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <h3 class="font-serif font-bold text-ink text-[1.05rem] mb-2">HOPE – Let the Healing Begin</h3>
+          <p class="text-ink-2 text-[.85rem] leading-relaxed flex-1">A flagship healing program dedicated to mental, emotional, and physical wellness for women in our community. Because healing together is more powerful.</p>
+          <span class="mt-4 self-start text-[.67rem] font-semibold uppercase tracking-wider bg-purple-pale text-purple-mid px-3 py-1 rounded-full">Wellness</span>
+        </div>
+      </article>
+      <article class="bg-white rounded-2xl overflow-hidden border border-brand card-hover fi d2 flex flex-col">
+        <div class="h-44 overflow-hidden"><img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&auto=format&fit=crop&q=70" alt="Women leaders ambassadors" loading="lazy" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"/></div>
+        <div class="p-6 flex flex-col flex-1 prog-stripe">
+          <div class="w-11 h-11 rounded-xl bg-purple-pale flex items-center justify-center text-purple-deep mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="23" y1="11" x2="17" y2="11"/><line x1="20" y1="8" x2="20" y2="14"/></svg>
+          </div>
+          <h3 class="font-serif font-bold text-ink text-[1.05rem] mb-2">Sisterhood Ambassadors</h3>
+          <p class="text-ink-2 text-[.85rem] leading-relaxed flex-1">Our ambassador program trains women to become advocates and representatives of the sisterhood movement — creating change in their own neighborhoods.</p>
+          <span class="mt-4 self-start text-[.67rem] font-semibold uppercase tracking-wider bg-purple-pale text-purple-mid px-3 py-1 rounded-full">Leadership</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="events" class="py-24 bg-white" aria-labelledby="evh">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="flex items-end justify-between mb-12 flex-wrap gap-4">
+      <div>
+        <div class="lbl fi">Mark Your Calendar</div>
+        <h2 id="evh" class="font-serif font-black text-ink leading-tight mt-1 fi d1" style="font-size:clamp(1.8rem,3vw,2.6rem)">Upcoming Events</h2>
+        <div class="divider mt-4 fi d1"></div>
+      </div>
+      <a href="#contact" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-[.82rem] font-semibold text-white bg-purple-mid-grad shadow-purple hover:-translate-y-0.5 transition-all duration-200 fi">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        View All Events
+      </a>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <article class="bg-white rounded-2xl overflow-hidden border border-brand card-hover fi flex flex-col">
+        <div class="h-40 overflow-hidden"><img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&auto=format&fit=crop&q=70" alt="HIV AIDS awareness event" loading="lazy" class="w-full h-full object-cover"/></div>
+        <div class="p-5 flex flex-col flex-1">
+          <div class="inline-flex items-center gap-1.5 text-[.7rem] font-semibold text-purple-mid mb-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Feb 7 · Greenbelt, MD
+          </div>
+          <h3 class="font-serif font-bold text-ink text-[.95rem] mb-2">National Black HIV/AIDS Awareness Day</h3>
+          <p class="text-ink-2 text-[.82rem] leading-relaxed flex-1">Education, community action, and free testing resources for all.</p>
+          <span class="mt-3 self-start text-[.65rem] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-pink-50 text-pink">Health Awareness</span>
+        </div>
+      </article>
+      <article class="bg-white rounded-2xl overflow-hidden border border-brand card-hover fi d1 flex flex-col">
+        <div class="h-40 overflow-hidden"><img src="https://images.unsplash.com/photo-1512909006721-3d6018887383?w=500&auto=format&fit=crop&q=70" alt="Holiday gifts for children" loading="lazy" class="w-full h-full object-cover"/></div>
+        <div class="p-5 flex flex-col flex-1">
+          <div class="inline-flex items-center gap-1.5 text-[.7rem] font-semibold text-purple-mid mb-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            December · Annual
+          </div>
+          <h3 class="font-serif font-bold text-ink text-[.95rem] mb-2">'Tis the Season – Adopt a Child</h3>
+          <p class="text-ink-2 text-[.82rem] leading-relaxed flex-1">Annual holiday gift drive for children and families in need.</p>
+          <span class="mt-3 self-start text-[.65rem] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-pink-50 text-pink">Community Giving</span>
+        </div>
+      </article>
+      <article class="bg-white rounded-2xl overflow-hidden border border-brand card-hover fi d2 flex flex-col">
+        <div class="h-40 overflow-hidden"><img src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=500&auto=format&fit=crop&q=70" alt="Women healing gathering" loading="lazy" class="w-full h-full object-cover"/></div>
+        <div class="p-5 flex flex-col flex-1">
+          <div class="inline-flex items-center gap-1.5 text-[.7rem] font-semibold text-purple-mid mb-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Sunday · 11am–1pm
+          </div>
+          <h3 class="font-serif font-bold text-ink text-[.95rem] mb-2">HOPE – Let the Healing Begin</h3>
+          <p class="text-ink-2 text-[.82rem] leading-relaxed flex-1">Come as you are — leave empowered. Wellness programming for all.</p>
+          <span class="mt-3 self-start text-[.65rem] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-pink-50 text-pink">Wellness Event</span>
+        </div>
+      </article>
+      <article class="bg-white rounded-2xl overflow-hidden border border-brand card-hover fi d3 flex flex-col">
+        <div class="h-40 overflow-hidden"><img src="https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?w=500&auto=format&fit=crop&q=70" alt="Sisters celebration" loading="lazy" class="w-full h-full object-cover"/></div>
+        <div class="p-5 flex flex-col flex-1">
+          <div class="inline-flex items-center gap-1.5 text-[.7rem] font-semibold text-purple-mid mb-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Annual Celebration
+          </div>
+          <h3 class="font-serif font-bold text-ink text-[.95rem] mb-2">Sisters' Favorite Things</h3>
+          <p class="text-ink-2 text-[.82rem] leading-relaxed flex-1">Sisters share life lessons, favorites, and inspirations at our beloved annual event.</p>
+          <span class="mt-3 self-start text-[.65rem] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-pink-50 text-pink">Celebration</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="hope" class="py-24 overflow-hidden" style="background:linear-gradient(135deg,#2d0050 0%,#4a0072 55%,#1a0a2e 100%)" aria-labelledby="hoh">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-14 items-center">
+      <div class="rounded-3xl overflow-hidden shadow-[0_16px_64px_rgba(0,0,0,.4)] fi" style="aspect-ratio:4/3">
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=900&auto=format&fit=crop&q=75" alt="Women in the HOPE healing program" loading="lazy" class="w-full h-full object-cover"/>
+      </div>
+      <div class="text-white">
+        <div class="lbl fi" style="color:#f5d78e">Our Flagship Program</div>
+        <h2 id="hoh" class="font-serif font-black leading-tight mt-1 mb-4 fi d1" style="font-size:clamp(1.8rem,3vw,2.6rem);color:#fff"><span style="color:#f5d78e">HOPE</span> — Let the Healing Begin</h2>
+        <div class="divider fi d1 mb-6" style="background:linear-gradient(90deg,#c9a84c,#f5d78e)"></div>
+        <p class="mb-4 fi d2" style="color:rgba(255,255,255,.75);font-size:.97rem;line-height:1.8">HOPE is more than a program — it's a movement. A sacred gathering for women ready to step into healing, wholeness, and their full potential.</p>
+        <p class="mb-6 fi d2" style="color:rgba(255,255,255,.75);font-size:.97rem;line-height:1.8">Through evidence-informed wellness programming, spiritual support, and community, we guide sisters through transformation.</p>
+        <div class="grid grid-cols-2 gap-3 mb-8 fi d3">
+          <div class="flex gap-3 items-start">
+            <div class="w-9 h-9 rounded-lg flex-shrink-0 flex items-center justify-center" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);color:#f5d78e">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <div><strong class="block text-[.82rem] font-semibold" style="color:#f5d78e">Mental Wellness</strong><span class="text-[.76rem]" style="color:rgba(255,255,255,.55)">Guided discussions & coping strategies</span></div>
+          </div>
+          <div class="flex gap-3 items-start">
+            <div class="w-9 h-9 rounded-lg flex-shrink-0 flex items-center justify-center" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);color:#f5d78e">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg>
+            </div>
+            <div><strong class="block text-[.82rem] font-semibold" style="color:#f5d78e">Emotional Healing</strong><span class="text-[.76rem]" style="color:rgba(255,255,255,.55)">Safe space for sharing & releasing</span></div>
+          </div>
+          <div class="flex gap-3 items-start">
+            <div class="w-9 h-9 rounded-lg flex-shrink-0 flex items-center justify-center" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);color:#f5d78e">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+            </div>
+            <div><strong class="block text-[.82rem] font-semibold" style="color:#f5d78e">Spiritual Grounding</strong><span class="text-[.76rem]" style="color:rgba(255,255,255,.55)">Prayer, reflection & connection</span></div>
+          </div>
+          <div class="flex gap-3 items-start">
+            <div class="w-9 h-9 rounded-lg flex-shrink-0 flex items-center justify-center" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);color:#f5d78e">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div><strong class="block text-[.82rem] font-semibold" style="color:#f5d78e">Community Support</strong><span class="text-[.76rem]" style="color:rgba(255,255,255,.55)">Sisters walking together — never alone</span></div>
+          </div>
+        </div>
+        <a href="#contact" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-[.88rem] font-semibold text-white bg-pink-grad shadow-pink hover:-translate-y-0.5 hover:shadow-pink-lg transition-all duration-200 fi d4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          Register for HOPE
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="donate" class="py-24 bg-section" aria-labelledby="doh">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center max-w-xl mx-auto mb-12">
+      <div class="lbl fi">Make an Impact</div>
+      <h2 id="doh" class="font-serif font-black text-ink leading-tight mt-1 fi d1" style="font-size:clamp(1.8rem,3vw,2.6rem)">Your Support Makes the Difference</h2>
+      <div class="divider c mt-4 mb-5 fi d1"></div>
+      <p class="text-ink-2 text-[.95rem] fi d2">Every dollar donated directly funds programs that change women's lives.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+      <div class="bg-white rounded-2xl border border-brand p-6 text-center card-hover flex flex-col items-center gap-4">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Paypal_2014_logo.png" alt="PayPal" class="donate-icon">
+        <h3 class="font-sans font-bold text-ink text-[.9rem]">PayPal</h3>
+        <p class="text-ink-muted text-sm">Donate securely online.</p>
+        <a href="mailto:sisters4sisters@aol.com" class="mt-auto px-6 py-2.5 rounded-full text-sm font-semibold text-white bg-pink-grad shadow-pink hover:-translate-y-0.5 transition-all">Donate via PayPal</a>
+      </div>
+      <div class="bg-white rounded-2xl border border-brand p-6 text-center card-hover flex flex-col items-center gap-4">
+        <img src="https://download.logo.wine/logo/Cash_App/Cash_App-Logo.wine.png" alt="Cash App" class="donate-icon h-14">
+        <h3 class="font-sans font-bold text-ink text-[.9rem]">Cash App</h3>
+        <p class="text-ink-muted text-sm">Send directly.</p>
+        <div class="font-bold text-purple-mid text-lg mt-auto">$SistersHeart</div>
+      </div>
+      <div class="bg-white rounded-2xl border border-brand p-6 text-center card-hover flex flex-col items-center gap-4">
+        <img src="https://static.vecteezy.com/system/resources/previews/067/565/437/non_2x/zelle-logo-rounded-app-icon-free-png.png" alt="Zelle" class="donate-icon h-12">
+        <h3 class="font-sans font-bold text-ink text-[.9rem]">Zelle</h3>
+        <p class="text-ink-muted text-sm">Instant transfer.</p>
+        <div class="font-bold text-purple-mid text-lg mt-auto">301-257-5784</div>
+      </div>
+      <div class="bg-white rounded-2xl border border-brand p-6 text-center card-hover flex flex-col items-center gap-4">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Combined_Federal_Campaign_logo_2018.png" alt="CFC" class="donate-icon h-14 opacity-90">
+        <h3 class="font-sans font-bold text-ink text-[.9rem]">CFC Charity</h3>
+        <p class="text-ink-muted text-sm">Federal employees.</p>
+        <div class="font-bold text-purple-mid text-lg mt-auto">#54161</div>
+      </div>
+    </div>
+    <div class="rounded-2xl p-8 text-center text-white fi" style="background:linear-gradient(135deg,#4a0072,#7b1fa2)">
+      <div class="inline-block mb-3 px-3 py-1 rounded-full text-[.68rem] font-semibold uppercase tracking-widest" style="background:rgba(201,168,76,.2);border:1px solid rgba(201,168,76,.45);color:#f5d78e">501(c)3 Recognized Nonprofit</div>
+      <p class="font-semibold text-white">Sisters4Sisters Inc. · sisters4sisters@aol.com · sisters4sisters.org</p>
+      <p class="mt-1 text-[.83rem] text-white/65">All donations are tax-deductible. Sisters4Sisters Inc. is a 501(c)3 Non-Profit Organization recognized by the IRS.</p>
+    </div>
+  </div>
+</section>
+
+<section id="join" class="py-24 bg-white" aria-labelledby="joh">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-14 items-center">
+      <div class="relative rounded-3xl overflow-hidden shadow-brand-lg fi" style="aspect-ratio:4/3;background:linear-gradient(135deg,#4a0072,#e91e8c)">
+        <img src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?w=900&auto=format&fit=crop&q=70" alt="Women volunteering together" loading="lazy" class="absolute inset-0 w-full h-full object-cover mix-blend-luminosity opacity-35"/>
+        <div class="absolute inset-0 flex items-center justify-center text-center p-8 z-10">
+          <div class="text-white">
+            <div class="font-serif font-black leading-[1.05] mb-2" style="font-size:clamp(2rem,3.5vw,3rem)">Join the<br>Sisterhood</div>
+            <div class="text-[.8rem] tracking-widest uppercase opacity-75">www.joinsisters.org</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="lbl fi">Get Involved</div>
+        <h2 id="joh" class="font-serif font-black text-ink leading-tight mt-1 mb-4 fi d1" style="font-size:clamp(1.8rem,3vw,2.6rem)">Volunteer · Ambassador · Partner</h2>
+        <div class="divider fi d1 mb-6"></div>
+        <p class="text-ink-2 mb-4 fi d2">The sisterhood is strongest when we show up together. Whether you want to volunteer at events, become an ambassador for change, or partner with us — we have a place for you.</p>
+        <p class="text-ink-2 fi d2">Join a growing movement of women across Maryland and beyond who are connecting, celebrating, and creating lasting change.</p>
+        <div class="flex flex-wrap gap-2 mt-6 mb-8 fi d3">
+          <div class="jo ac flex items-center gap-2 bg-section border border-brand rounded-full px-4 py-2 text-[.82rem] font-semibold text-ink-2 cursor-pointer transition-all duration-200">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="23" y1="11" x2="17" y2="11"/><line x1="20" y1="8" x2="20" y2="14"/></svg>
+            Volunteer
+          </div>
+          <div class="jo flex items-center gap-2 bg-section border border-brand rounded-full px-4 py-2 text-[.82rem] font-semibold text-ink-2 cursor-pointer transition-all duration-200">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            Ambassador
+          </div>
+          <div class="jo flex items-center gap-2 bg-section border border-brand rounded-full px-4 py-2 text-[.82rem] font-semibold text-ink-2 cursor-pointer transition-all duration-200">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            Partner
+          </div>
+          <div class="jo flex items-center gap-2 bg-section border border-brand rounded-full px-4 py-2 text-[.82rem] font-semibold text-ink-2 cursor-pointer transition-all duration-200">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg>
+            Supporter
+          </div>
+        </div>
+        <a href="https://www.joinsisters.org" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-[.88rem] font-semibold text-white bg-purple-mid-grad shadow-purple hover:-translate-y-0.5 transition-all duration-200 fi d4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg>
+          Join at joinsisters.org
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sponsors" class="py-16 bg-section" aria-labelledby="sph">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <div class="lbl fi">Our Partners</div>
+    <h2 id="sph" class="font-serif font-black text-ink mt-1 fi d1" style="font-size:clamp(1.4rem,2.5vw,1.9rem)">Thank You to Our Proud Sponsors</h2>
+    <div class="divider c mt-4 mb-8 fi d1"></div>
+    <div class="flex flex-wrap gap-8 justify-center items-center">
+      <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/936275/889125_169687.png" alt="Dynamic Service Solutions" class="sponsor-logo">
+      <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/936275/855961_342912.png" alt="Chipotle" class="sponsor-logo">
+      <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/936275/958699_196321.png" alt="The Home Depot" class="sponsor-logo">
+      <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/936275/476340_183593.png" alt="The Home Depot" class="sponsor-logo">
+    </div>
+    <p class="mt-6 text-[.82rem] text-ink-muted fi">
+      Interested in sponsoring?
+      <a href="#contact" class="text-purple-mid font-semibold ml-1 hover:underline">Get in touch →</a>
+    </p>
+  </div>
+</section>
+
+<section id="contact" class="py-24 bg-white" aria-labelledby="coh">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-14 items-start">
+      <div>
+        <div class="lbl fi">Get In Touch</div>
+        <h2 id="coh" class="font-serif font-black text-ink leading-tight mt-1 mb-4 fi d1" style="font-size:clamp(1.8rem,3vw,2.4rem)">We Would Love to Hear from You</h2>
+        <div class="divider fi d1 mb-6"></div>
+        <p class="text-ink-2 mb-8 fi d2">Whether you have questions about our programs, want to volunteer, or are interested in partnering — reach out. The sisterhood is always open.</p>
+        <div class="flex flex-col gap-4 fi d3">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-purple-pale flex items-center justify-center text-purple-deep flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div><strong class="block text-[.8rem] font-semibold text-ink">Address</strong><span class="text-[.85rem] text-ink-2">8943 Greenbelt Road, Suite 250<br>Greenbelt, MD 20770</span></div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-purple-pale flex items-center justify-center text-purple-deep flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.09h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div><strong class="block text-[.8rem] font-semibold text-ink">Phone</strong><span class="text-[.85rem] text-ink-2"><a href="tel:3015525450" class="text-purple-mid hover:underline">301-552-5450 (7470)</a></span></div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-purple-pale flex items-center justify-center text-purple-deep flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div><strong class="block text-[.8rem] font-semibold text-ink">Email</strong><span class="text-[.85rem]"><a href="mailto:info@sisters4sisters.org" class="text-purple-mid hover:underline">info@sisters4sisters.org</a></span></div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-purple-pale flex items-center justify-center text-purple-deep flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div><strong class="block text-[.8rem] font-semibold text-ink">Hours</strong><span class="text-[.85rem] text-ink-2">By Appointment Only</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white rounded-2xl border border-brand p-8 shadow-brand fi d2">
+        <h3 class="font-serif font-bold text-ink text-[1.15rem] mb-6">Send Us a Message</h3>
+        <form action="#" method="post" novalidate class="flex flex-col gap-4">
+          <div class="grid grid-cols-2 gap-4">
+            <div><label class="block text-[.78rem] font-semibold text-ink-2 mb-1.5" for="fn">First Name</label><input class="inp" type="text" id="fn" name="firstName" placeholder="First name" autocomplete="given-name" required/></div>
+            <div><label class="block text-[.78rem] font-semibold text-ink-2 mb-1.5" for="ln">Last Name</label><input class="inp" type="text" id="ln" name="lastName" placeholder="Last name" autocomplete="family-name" required/></div>
+          </div>
+          <div><label class="block text-[.78rem] font-semibold text-ink-2 mb-1.5" for="em">Email</label><input class="inp" type="email" id="em" name="email" placeholder="your@email.com" autocomplete="email" required/></div>
+          <div>
+            <label class="block text-[.78rem] font-semibold text-ink-2 mb-1.5" for="sb">Subject</label>
+            <select class="inp" id="sb" name="subject">
+              <option value="">Select a topic…</option>
+              <option>General Inquiry</option>
+              <option>Volunteer / Ambassador</option>
+              <option>Partnership / Sponsorship</option>
+              <option>Program Information</option>
+              <option>Donation Question</option>
+              <option>Event Information</option>
+            </select>
+          </div>
+          <div><label class="block text-[.78rem] font-semibold text-ink-2 mb-1.5" for="mg">Message</label><textarea class="inp" id="mg" name="message" placeholder="Tell us how we can help…" required></textarea></div>
+          <button type="submit" class="w-full py-3.5 rounded-xl text-[.9rem] font-semibold text-white bg-purple-mid-grad shadow-purple hover:opacity-90 hover:-translate-y-0.5 transition-all duration-200 border-none cursor-pointer" style="font-family:'DM Sans',sans-serif">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="mailing" class="py-20" style="background:linear-gradient(135deg,#4a0072,#1a0a2e)" aria-labelledby="mlh">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center max-w-2xl mx-auto">
+      <div class="lbl fi" style="color:#f5d78e">Stay Connected</div>
+      <h2 id="mlh" class="font-serif font-black text-white mt-1 mb-5 fi d1" style="font-size:clamp(2rem,4.5vw,3.2rem)">
+        Join Our Mailing List
+      </h2>
+      <p class="mb-10 text-white/75 text-lg leading-relaxed fi d2 max-w-xl mx-auto">
+        Get the latest news, upcoming events, program updates, and sisterhood inspiration delivered straight to your inbox.
+      </p>
+
+      <form class="fi d3 max-w-xl mx-auto" action="#" method="post" novalidate>
+        <div class="relative flex rounded-full overflow-hidden bg-white/12 border-2 border-white/25 focus-within:border-[#f5d78e] focus-within:bg-white/15 transition-all duration-300 shadow-inner">
+          <input 
+            type="email" 
+            name="email" 
+            placeholder="Enter your email address" 
+            required 
+            class="flex-1 bg-transparent px-7 py-5 text-base text-white placeholder-white/55 outline-none text-left"
+            style="font-family:'DM Sans',sans-serif;"
+          />
+          <button 
+            type="submit" 
+            class="group relative inline-flex items-center gap-3 px-8 py-5 bg-pink-grad text-white font-semibold text-base hover:bg-opacity-90 transition-colors duration-200 whitespace-nowrap"
+          >
+            Subscribe Now
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-300 group-hover:translate-x-1">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </button>
+        </div>
+        <p class="mt-5 text-white/45 text-sm fi d4">
+          We respect your privacy — you can unsubscribe at any time.
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="py-14 pb-8" style="background:#0d0118;color:rgba(255,255,255,.55)" role="contentinfo">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid md:grid-cols-[2fr_1fr_1fr] gap-10 mb-10">
+      <div>
+        <a href="#hero" class="flex items-center gap-3 mb-4" aria-label="Sisters4Sisters home">
+          <div class="w-10 h-10 rounded-full bg-purple-mid-grad flex items-center justify-center text-white flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg>
+          </div>
+          <div>
+            <div class="font-serif font-bold text-[1.05rem] leading-tight" style="color:#ce93d8">Sisters4Sisters</div>
+            <div class="text-[.55rem] tracking-widest uppercase" style="color:rgba(255,255,255,.3)">Inc.</div>
+          </div>
+        </a>
+        <p class="text-[.84rem] leading-relaxed max-w-xs" style="color:rgba(255,255,255,.45)">Sisters4Sisters Inc. is a 501(c)3 Non-Profit Organization recognized by the IRS. Connecting and celebrating for change.</p>
+        <p class="mt-3 text-[.73rem]" style="color:rgba(255,255,255,.25)">CFC Charity #54161 · Greenbelt, MD</p>
+      </div>
+      <div>
+        <h4 class="font-sans font-bold text-[.7rem] uppercase tracking-[.14em] mb-4" style="color:rgba(255,255,255,.3)">Programs</h4>
+        <ul class="list-none flex flex-col gap-2">
+          <li><a href="#programs" class="text-[.83rem] hover:text-purple-light transition-colors" style="color:rgba(255,255,255,.48)">HIV/AIDS Awareness</a></li>
+          <li><a href="#programs" class="text-[.83rem] hover:text-purple-light transition-colors" style="color:rgba(255,255,255,.48)">The Prayer Room</a></li>
+          <li><a href="#programs" class="text-[.83rem] hover:text-purple-light transition-colors" style="color:rgba(255,255,255,.48)">Adopt a Child</a></li>
+          <li><a href="#programs" class="text-[.83rem] hover:text-purple-light transition-colors" style="color:rgba(255,255,255,.48)">Sisters' Fav Things</a></li>
+          <li><a href="#hope" class="text-[.83rem] hover:text-purple-light transition-colors" style="color:rgba(255,255,255,.48)">HOPE Program</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-sans font-bold text-[.7rem] uppercase tracking-[.14em] mb-4" style="color:rgba(255,255,255,.3)">Organization</h4>
+        <ul class="list-none flex flex-col gap-2">
+          <li><a href="#about" class="text-[.83rem] hover:text-purple-light transition-colors" style="color:rgba(255,255,255,.48)">About Us</a></li>
+          <li><a href="#join" class="text-[.83rem] hover:text-purple-light transition-colors" style="color:rgba(255,255,255,.48)">Join / Volunteer</a></li>
+          <li><a href="#donate" class="text-[.83rem] hover:text-purple-light transition-colors" style="color:rgba(255,255,255,.48)">Donate</a></li>
+          <li><a href="#sponsors" class="text-[.83rem] hover:text-purple-light transition-colors" style="color:rgba(255,255,255,.48)">Sponsors</a></li>
+          <li><a href="#contact" class="text-[.83rem] hover:text-purple-light transition-colors" style="color:rgba(255,255,255,.48)">Contact</a></li>
+          <li><a href="https://www.joinsisters.org" target="_blank" rel="noopener noreferrer" class="text-[.83rem] hover:text-purple-light transition-colors" style="color:rgba(255,255,255,.48)">joinsisters.org</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="flex flex-wrap items-center justify-between gap-3 pt-6" style="border-top:1px solid rgba(255,255,255,.08)">
+      <p class="text-[.76rem]" style="color:rgba(255,255,255,.25)">© 2024 Sisters4Sisters Inc. All rights reserved. · <a href="mailto:info@sisters4sisters.org" class="hover:text-purple-light transition-colors" style="color:#ce93d8">info@sisters4sisters.org</a></p>
+      <p class="text-[.76rem]" style="color:rgba(255,255,255,.22)">
+        Built with love for the Sisterhood by 
+        <a 
+          href="https://www.linkedin.com/in/ghaithheni" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="text-purple-light hover:text-purple-mid font-medium transition-colors"
+          style="color:#ce93d8;"
+        >Nova</a>
+      </p>
+    </div>
+  </div>
+</footer>
+<button id="btt" aria-label="Back to top" class="fixed bottom-7 right-7 z-50 w-11 h-11 rounded-full flex items-center justify-center text-white bg-purple-mid-grad shadow-purple hover:-translate-y-1 transition-all duration-200 border-none cursor-pointer " style="transition:opacity .3s,transform .3s">
+  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+</button>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('sc', scrollY > 20), {passive:true});
+
+  const hbtn = document.getElementById('hbtn'), mm = document.getElementById('mmenu');
+  hbtn.addEventListener('click', () => {
+    const o = mm.classList.toggle('flex'); mm.classList.toggle('hidden', !o);
+    hbtn.classList.toggle('op', o); hbtn.setAttribute('aria-expanded', o);
+  });
+  mm.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mm.classList.remove('flex'); mm.classList.add('hidden');
+    hbtn.classList.remove('op'); hbtn.setAttribute('aria-expanded','false');
+  }));
+
+  const btt = document.getElementById('btt');
+  window.addEventListener('scroll', () => btt.classList.toggle('on', scrollY > 400), {passive:true});
+  btt.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('v'); obs.unobserve(e.target); } });
+  }, {threshold: .12, rootMargin: '0px 0px -36px 0px'});
+  document.querySelectorAll('.fi').forEach(el => obs.observe(el));
+
+  document.querySelectorAll('form').forEach(f => f.addEventListener('submit', e => {
+    e.preventDefault();
+    const b = f.querySelector('button[type=submit]'); if (!b) return;
+    const orig = b.textContent;
+    b.textContent = '✓ Sent!'; b.style.background = '#2e7d32';
+    setTimeout(() => { b.textContent = orig; b.style.background = ''; f.reset(); }, 3000);
+  }));
+</script>
+
+</body>
+</html>
